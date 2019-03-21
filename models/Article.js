@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-// Schema constructor to create a new user schema object
+// Schema constructor to create a new schema object
 var ArticleSchema = new Schema({
   title: {
     type: String,
