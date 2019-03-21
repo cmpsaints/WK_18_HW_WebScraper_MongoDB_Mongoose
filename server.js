@@ -26,6 +26,11 @@ var MONGODB_URI =
 
 mongoose.connect(MONGODB_URI);
 
+// main route
+app.get("/", function(req, res) {
+  res.send("index.html");
+});
+
 // start server, listen on PORT
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + " ...");
