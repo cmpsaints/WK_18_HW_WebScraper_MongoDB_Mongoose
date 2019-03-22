@@ -70,6 +70,29 @@ app.get("/scrape", function(req, res) {
     });
 });
 
+// GET route for getting all Articles from db
+app.get("/articles", function(req, res) {
+  db.Article.find({})
+    .then(function(dbArticle) {
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
+});
+
+// GET route for grabbing Article by id, and populate with its note
+app.get("/articles/:id", function(req, res) {
+  db.Article.findOne({ _id: req.params.id })
+    .populate("note")
+    .then(function(dbArticle) {
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
+});
+
 // start server, listen on PORT
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + " ...");
