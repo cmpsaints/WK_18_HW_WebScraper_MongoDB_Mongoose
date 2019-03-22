@@ -10,10 +10,10 @@ var cheerio = require("cheerio");
 // require models for Mongoose db structure
 var db = require("./models");
 
-const PORT = process.env.PORT || 3001;
-
 // initiate Express
 var app = express();
+
+const PORT = process.env.PORT || 5500;
 
 // ----- middleware ---------------
 
@@ -46,7 +46,7 @@ mongoose.connect(
 
 // main route
 app.get("/", function(req, res) {
-  res.send("index.html");
+  res.render("index");
 });
 
 // GET request to route to home, and clear page

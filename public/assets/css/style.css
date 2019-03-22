@@ -1,44 +1,78 @@
 body {
-  background-color: #fcf5c7;
-  /*background-color: #f2f6d0;*/
+  font-family: Arial, Helvetica, sans-serif;
+  /* text-shadow: 2px 2px #000000; */
+  margin: auto 5%;
+  /* background: #1c2326 url("https://images.unsplash.com/photo-1510511459019-5dda7724fd87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80") no-repeat center center fixed;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain; */
 }
 
-#wrapper {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 5%;
+.articles {
+  max-width: 100%;
 }
 
-.h1 {
-  text-align: center;
-}
-
-#articles {
-  display: inline-block;
-  overflow: auto;
-  width: 60%;
-  height: 700px;
+.saveArticle {
+  float: right;
 }
 
 #notes {
-  float: right;
-  width: 30%;
+  color: black;
+  text-align: center;
 }
 
-textarea,
-input {
-  display: block;
+#wrapper {
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.cards {
+  padding: 30px;
+  margin: 10px;
+  max-height: 200px;
+  /* max-width: 80%; */
+  border: 2px white solid;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.cards:hover {
+  background-color: rgb(54, 54, 53);
+}
+
+#titleinput,
+#bodyinput {
   width: 100%;
-  background-color: #fcf5c7;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-input {
-  height: 36px;
-  font-size: 24px;
+h5 {
+  font-family: "Helvetica", serif;
 }
 
-textarea {
-  height: 200px;
-  font-size: 18px;
+.custom-text-size {
+  font-size: 36px;
+}
+
+.pulse {
+  animation-name: pulse_animation;
+  animation-duration: 800ms;
+  transform-origin: 50% 70%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes pulse_animation {
+  33% {
+    transform: scale(1);
+  }
+  66% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
