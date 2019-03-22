@@ -10,9 +10,9 @@ $.getJSON("/articles", function(data) {
         data[i].title +
         "</h1> <br /> <a class='link' src=" +
         data[i].link +
-        ">VISIT SITE</a> <br />" +
+        ">" +
         data[i].paragraph +
-        "</div>"
+        "</a></div>"
     );
   }
 });

@@ -2,7 +2,6 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-//var mongojs = require("mongojs");
 
 var axios = require("axios");
 var cheerio = require("cheerio");
@@ -19,18 +18,19 @@ const PORT = process.env.PORT || 5500;
 
 // Morgan logger for logging requests
 app.use(logger("dev"));
+
 // parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// serve static route to public
+// make public folder a static route
 app.use(express.static("public"));
 
 // set Express Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database.
 //
 /* var MONGODB_URI =
   process.env.MONGODB_URI ||
