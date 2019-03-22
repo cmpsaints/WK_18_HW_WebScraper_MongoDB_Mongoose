@@ -31,3 +31,8 @@
   background-color: rgb(100, 75, 75) !important;
   color: white !important;
 }
+
+.navbar .nav-item .active:hover {
+  /* background-color: #4aaaa5 !important; */
+  color: black !important;
+}
