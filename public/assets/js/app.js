@@ -4,11 +4,11 @@ $.getJSON("/articles", function(data) {
   for (var i = 0; i < data.length; i++) {
     // display the appropriate info on page
     $("#articles").append(
-      "<div class='cards' data-favorite='false' data-toggle='modal' data-target='#cardModal' data-id='" +
+      "<div class='cards medium-leading medium-font' data-favorite='false' data-toggle='modal' data-target='#cardModal' data-id='" +
         data[i]._id +
-        "'> <div><button class='saveArticle' data-text-swap='saved'>save</button></div> <h1>" +
+        "'><div><button type='button' class='btn btn-info btn-sm saveArticle' data-text-swap='saved'>save</button></div><h1 class='title-margin'>" +
         data[i].title +
-        "</h1> <br /> <a class='link' src=" +
+        "</h1><a class='link' src=" +
         data[i].link +
         ">" +
         data[i].paragraph +
