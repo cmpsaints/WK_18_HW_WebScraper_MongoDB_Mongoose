@@ -33,7 +33,7 @@ body {
   background-color: rgba(200, 200, 200, 0.1);
 }
 
-.title-margin {
+.title-margins {
   margin: 10px 0;
 }
 
@@ -45,20 +45,42 @@ body {
   font-size: 0.8em;
 }
 
-.lrg-font {
-  font-size: 0.9em;
+.date-margins {
+  margin-bottom: 6px;
+}
+
+.article-link {
+  color: rgb(180, 180, 180);
+  text-decoration: none !important;
+}
+
+.article-link:hover,
+.article-link:focus {
+  color: rgb(100, 100, 100);
 }
 
 #notes {
   color: darkgray;
 }
 
+#savenote {
+  float: right;
+}
+
+.modal-title-margins {
+  margin: 15px 20px;
+}
+
+hr {
+  margin-top: 2px;
+}
+
 #titleinput {
-  padding: 5px 10px;
+  padding: 5px 8px;
 }
 
 #bodyinput {
-  padding: 10px;
+  padding: 5px 8px;
 }
 
 #titleinput,

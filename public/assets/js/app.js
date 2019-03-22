@@ -6,11 +6,13 @@ $.getJSON("/articles", function(data) {
     $("#articles").append(
       "<div class='cards medium-leading medium-font' data-favorite='false' data-toggle='modal' data-target='#cardModal' data-id='" +
         data[i]._id +
-        "'><div><button type='button' class='btn btn-info btn-sm saveArticle' data-text-swap='saved'>save</button></div><h1 class='title-margin'>" +
+        "'><div><button type='button' class='btn btn-info btn-sm saveArticle' data-text-swap='saved'>save</button></div><h6 class='title-margins'>" +
         data[i].title +
-        "</h1><a class='link' src=" +
+        "</h6><div class='date-margins'>" +
+        data[i].date +
+        "</div><a class='article-link' href='" +
         data[i].link +
-        ">" +
+        "' target='_blank'>" +
         data[i].paragraph +
         "</a></div>"
     );
@@ -46,19 +48,21 @@ $(document).on("click", ".cards", function() {
       console.log(data);
 
       $("#notes").append(
-        "<h2 class='lrg-font medium-leading'>" + data.title + "</h2>"
+        "<h6 class='medium-leading modal-title-margins'>" + data.title + "</h6>"
       );
 
       $("#notes").append(
-        "<br /><input id='titleinput' name='title' placeholder='title'>"
+        "<input id='titleinput' name='title' placeholder='title'>"
+      );
+
+      $("#notes").append("<hr />");
+
+      $("#notes").append(
+        "<textarea id='bodyinput' name='body' placeholder='notes'></textarea>"
       );
 
       $("#notes").append(
-        "<br /><textarea id='bodyinput' name='body' placeholder='notes'></textarea>"
-      );
-
-      $("#notes").append(
-        "<br /><button type='button' class='btn btn-info btn-sm' data-dismiss='modal' data-id='" +
+        "<button type='button' class='btn btn-info btn-sm' data-dismiss='modal' data-id='" +
           data._id +
           "' id='savenote'>save note</button>"
       );
