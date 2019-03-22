@@ -35,8 +35,7 @@ mongoose.connect(MONGODB_URI); */
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-    "mongodb://heroku_flkl5pqw:5ikojdboicpm91qm55oekmhllp@ds121406.mlab.com:21406/heroku_flkl5pqw",
-  { useMongoClient: true }
+    "mongodb://heroku_flkl5pqw:5ikojdboicpm91qm55oekmhllp@ds121406.mlab.com:21406/heroku_flkl5pqw"
 );
 
 // main route
