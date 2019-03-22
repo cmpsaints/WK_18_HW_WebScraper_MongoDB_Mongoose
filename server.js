@@ -12,7 +12,7 @@ var db = require("./models");
 // initiate Express
 var app = express();
 
-const PORT = process.env.PORT || 5500;
+const PORT = process.env.PORT || 3001;
 
 // ----- middleware ---------------
 
@@ -32,17 +32,17 @@ app.set("view engine", "handlebars");
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database.
 //
-/* var MONGODB_URI =
-  process.env.MONGODB_URI ||
-  "mongodb://heroku_flkl5pqw:5ikojdboicpm91qm55oekmhllp@ds121406.mlab.com:21406/heroku_flkl5pqw";
+var MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-mongoose.connect(MONGODB_URI); */
+mongoose.connect(MONGODB_URI);
 
+/*
 mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb://heroku_flkl5pqw:5ikojdboicpm91qm55oekmhllp@ds121406.mlab.com:21406/heroku_flkl5pqw",
+  process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines",
   { useNewUrlParser: true }
 );
+*/
 
 // main route
 app.get("/", function(req, res) {
