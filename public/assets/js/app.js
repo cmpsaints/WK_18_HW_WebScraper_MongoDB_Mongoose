@@ -4,9 +4,9 @@ $.getJSON("/articles", function(data) {
   for (var i = 0; i < data.length; i++) {
     // display the appropriate info on page
     $("#articles").append(
-      "<div class='cards medium-leading medium-font' data-favorite='false' data-toggle='modal' data-target='#cardModal' data-id='" +
+      "<div class='card medium-leading medium-font' data-favorite='false'><div><button type='button' class='btn btn-info btn-sm saveArticle' data-toggle='modal' data-target='#cardModal' data-text-swap='saved' data-id='" +
         data[i]._id +
-        "'><div><button type='button' class='btn btn-info btn-sm saveArticle' data-text-swap='saved'>save</button></div><h6 class='title-margins'>" +
+        "'>save</button></div><h6 class='title-margins'>" +
         data[i].title +
         "</h6><div class='date-margins'>" +
         data[i].date +
@@ -31,8 +31,8 @@ $(document).on("click", ".saveArticle", function() {
 
 // ----------
 
-// when a `p` tag is clicked
-$(document).on("click", ".cards", function() {
+// when a `save` article button is clicked
+$(document).on("click", ".saveArticle", function() {
   // empty the notes from note section
   $("#notes").empty();
   // save the id from p tag

@@ -20,7 +20,7 @@ body {
   color: rgb(180, 180, 180);
 }
 
-.cards {
+.card {
   padding: 20px;
   margin: 10px;
   max-height: 200px;
@@ -29,7 +29,7 @@ body {
   background-color: rgba(200, 200, 200, 0.05);
 }
 
-.cards:hover {
+.card:hover {
   background-color: rgba(200, 200, 200, 0.1);
 }
 
