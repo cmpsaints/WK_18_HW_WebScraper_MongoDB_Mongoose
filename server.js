@@ -105,7 +105,7 @@ app.post("/articles/:id", function(req, res) {
   // create new Note and pass req.body to new entry
   db.Note.create(req.body)
 
-    // find one Article with _id equal to req.params.id, update Article with new Note
+    // find one Article with _id equal to req.params.id, then update Article with new Note
     .then(function(dbNote) {
       return db.Article.findOneAndUpdate(
         { _id: req.params.id },
