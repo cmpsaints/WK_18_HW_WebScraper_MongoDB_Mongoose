@@ -44,10 +44,6 @@ mongoose.connect(
   { useNewUrlParser: true }
 );
 
-// ----- import & serve routes ----------
-// var routes = require("./controllers/article_controller.js")
-// app.use(routes);
-
 // main route
 app.get("/", function(req, res) {
   res.send("index.html");
