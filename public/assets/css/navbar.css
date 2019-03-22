@@ -18,3 +18,16 @@
   font-size: 32px;
   padding-top: 15px;
 }
+
+.navbar .nav-item {
+  float: right;
+  color: darkslategray;
+  text-align: center;
+  padding: 15px 15px;
+  font-size: 16px;
+}
+
+.navbar .nav-item .active {
+  background-color: rgb(100, 75, 75) !important;
+  color: white !important;
+}
