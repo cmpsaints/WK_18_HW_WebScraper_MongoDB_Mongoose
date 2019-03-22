@@ -6,7 +6,7 @@ var mongoose = require("mongoose");
 var axios = require("axios");
 var cheerio = require("cheerio");
 
-// require models
+// require models for Mongoose db structure
 var db = require("./models");
 
 const PORT = process.env.PORT || 3001;
@@ -22,7 +22,7 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// make public a static folder
+// make the public folder static
 app.use(express.static("public"));
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
@@ -93,8 +93,22 @@ app.get("/articles", function(req, res) {
 });
 
 // GET route for grabbing Article by id, and populate with its note
-app.get("/articles/:id", function(req, res) {
+/* app.get("/articles/:id", function(req, res) {
   db.Article.findOne({ _id: req.params.id })
+
+    .populate("note")
+
+    .then(function(dbArticle) {
+      res.json(dbArticle);
+    })
+
+    .catch(function(err) {
+      res.json(err);
+    });
+}); */
+
+app.get("/articles/:id", function(req, res) {
+  db.Article.findOne({ _id: mongojs.ObjectId(req.params.id) })
 
     .populate("note")
 
