@@ -53,9 +53,8 @@ app.get("/", function(req, res) {
   res.send("index.html");
 });
 
-// GET Home /clear
+// GET request to route to home, and clear page
 app.get("/home", function(req, res) {
-  // Clear Article collection
   db.Article.deleteMany({})
     .then(function(dbArticle) {
       // res.json(dbArticle);
@@ -66,9 +65,8 @@ app.get("/home", function(req, res) {
   res.redirect("/");
 });
 
-// GET scrape with Axios
+// GET request to scrape
 app.get("/scrape", function(req, res) {
-  // Clear Article collection
   db.Article.deleteMany({})
     .then(function(dbArticle) {
       // res.json(dbArticle);
@@ -77,7 +75,7 @@ app.get("/scrape", function(req, res) {
       res.json(err);
     });
 
-  // First, we grab the body of the html with axios
+  // First, we grab the body of the html with Axios
   axios.get("https://www.w3.org/blog/").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
@@ -102,15 +100,13 @@ app.get("/scrape", function(req, res) {
       db.Article.create(result)
         // console.log(result)
         .then(function(dbArticle) {
-          // View the added result in the console
           console.log(dbArticle);
         })
         .catch(function(err) {
-          // If an error occurred, log it
           console.log(err);
         });
     });
-    // Refresh page to display articles
+    // refresh page to display articles
     res.redirect("/");
   });
 });
