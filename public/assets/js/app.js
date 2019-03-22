@@ -31,12 +31,12 @@ $(document).on("click", ".saveArticle", function() {
 
 // when a `p` tag is clicked
 $(document).on("click", ".cards", function() {
-  // Empty the notes from the note section
+  // empty the notes from note section
   $("#notes").empty();
-  // Save the id from the p tag
+  // save the id from p tag
   var thisId = $(this).attr("data-id");
 
-  // Ajax call for the Article
+  // AJAX call for the Article
   $.ajax({
     method: "GET",
     url: "/articles/" + thisId
@@ -45,20 +45,22 @@ $(document).on("click", ".cards", function() {
     .then(function(data) {
       console.log(data);
 
-      $("#notes").append("<h2>" + data.title + "</h2>");
+      $("#notes").append(
+        "<h2 class='lrg-font medium-leading'>" + data.title + "</h2>"
+      );
 
       $("#notes").append(
         "<br /><input id='titleinput' name='title' placeholder='title'>"
       );
 
       $("#notes").append(
-        "<br /><textarea id='bodyinput' name='body' placeholder='Notes'></textarea>"
+        "<br /><textarea id='bodyinput' name='body' placeholder='notes'></textarea>"
       );
 
       $("#notes").append(
-        "<br /><button data-dismiss='modal' data-id='" +
+        "<br /><button type='button' class='btn btn-info btn-sm' data-dismiss='modal' data-id='" +
           data._id +
-          "' id='savenote'>Save Note</button>"
+          "' id='savenote'>save note</button>"
       );
 
       // if there's a note in the article
