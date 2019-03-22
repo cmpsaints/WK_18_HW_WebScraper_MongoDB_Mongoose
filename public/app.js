@@ -13,12 +13,15 @@ $.getJSON("/articles", function(data) {
   }
 });
 
+// ----------
+
 $(document).on("click", "p", function() {
   $("#notes").empty();
 
+  // save id from p tag
   var thisId = $(this).attr("data-id");
 
-  // AJAX call for Article
+  // AJAX GET request for Article
   $.ajax({
     method: "GET",
     url: "/articles/" + thisId
@@ -39,4 +42,29 @@ $(document).on("click", "p", function() {
         $("#bodyinput").val(data.note.body);
       }
     });
+});
+
+// ----------
+
+$(document).on("click", "#savenote", function() {
+  // submit button grabs Article's associated id
+  var thisId = $(this).attr("data-id");
+
+  // AJAX POST request to change note
+  $.ajax({
+    method: "POST",
+    url: "/articles/" + thisId,
+    data: {
+      title: $("#titleinput").val(),
+      body: $("#bodyinput").val()
+    }
+  }).then(function(data) {
+    console.log(data);
+
+    $("#notes").empty();
+  });
+
+  // remove note values entered in input & textarea
+  $("#titleinput").val("");
+  $("#bodyinput").val("");
 });
