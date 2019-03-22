@@ -13,70 +13,57 @@ body {
   color: darkgray !important;
 }
 
-.articles {
-  max-width: 100%;
-}
-
-.saveArticle {
-  float: right;
-}
-
-#notes {
-  color: black;
-  text-align: center;
-}
-
 #wrapper {
-  width: 1280px;
+  width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  color: white;
+  color: rgb(180, 180, 180);
 }
 
 .cards {
-  padding: 30px;
+  padding: 20px;
   margin: 10px;
   max-height: 200px;
-  /* max-width: 80%; */
-  border: 2px white solid;
-  background-color: rgba(0, 0, 0, 0.75);
+  border: 1px lightgray solid;
+  border-radius: 3px;
+  background-color: rgba(200, 200, 200, 0.05);
 }
 
 .cards:hover {
-  background-color: rgb(54, 54, 53);
+  background-color: rgba(200, 200, 200, 0.1);
+}
+
+.title-margin {
+  margin: 10px 0;
+}
+
+.medium-leading {
+  line-height: 1.4em;
+}
+
+.medium-font {
+  font-size: 0.8em;
+}
+
+.lrg-font {
+  font-size: 0.9em;
+}
+
+#notes {
+  color: darkgray;
+}
+
+#titleinput {
+  padding: 5px 10px;
+}
+
+#bodyinput {
+  padding: 10px;
 }
 
 #titleinput,
 #bodyinput {
   width: 100%;
-  padding: 10px;
   margin-bottom: 10px;
-}
-
-h5 {
-  font-family: "Helvetica", serif;
-}
-
-.custom-text-size {
-  font-size: 36px;
-}
-
-.pulse {
-  animation-name: pulse_animation;
-  animation-duration: 800ms;
-  transform-origin: 50% 70%;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-@keyframes pulse_animation {
-  33% {
-    transform: scale(1);
-  }
-  66% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-  }
+  border: 0px !important;
 }
